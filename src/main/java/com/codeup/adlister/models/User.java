@@ -5,6 +5,25 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(long id, String username, String email, String password, String phoneNumber, String avatarURL) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.avatarURL = avatarURL;
+    }
+
     private String avatarURL;
 
     public User() {}

@@ -30,8 +30,8 @@
             <label for="phone_number">Enter your phone number</label>
             <input id="phone_number" name="phone_number" class="form-control" type="text">
         </div>
+        <input type="submit" class="btn btn-primary btn-block">
     </form>
-    <input type="submit" class="btn btn-primary btn-block">
     <span>Already registered? <a href="/login">Log in now!</a></span>
 </div>
 </body>
