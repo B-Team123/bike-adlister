@@ -33,6 +33,8 @@
             <div class="form-group">
             <label for="size">size</label>
             <select id="size" name="size" class="form-control">
+
+
                 <%--        bike sizes informative options tags       --%>
                 <option value="0" name="blank"></option>
                 <option value="1" name="Child">Child</option>
