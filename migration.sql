@@ -15,17 +15,14 @@ create table categories
 
 create table users
 (
-    id             int auto_increment
-        primary key,
+    id int auto_increment primary key,
     username varchar(255) not null,
     password varchar(255) not null,
     email varchar(255) not null,
-    `phone-number`int not null,
+    phone_number int not null,
     avatar_url varchar(255),
-    constraint email
-        unique (email),
-    constraint username
-        unique (username)
+    constraint email unique (email),
+    constraint username unique (username)
 );
 
 create table ads
@@ -34,27 +31,27 @@ create table ads
     user_id int not null,
     title varchar(255) not null,
     description TEXT not null,
-    price       double       not null,
+    price double not null,
     constraint ads_users_id_fk
-        foreign key (user_id) references users (id)
+    foreign key (user_id) references users (id)
 );
 
 create table ads_categories_join
 (
-    ads_id_fk        int null,
-    categories_id_fk int null,
+    ads_id_fk int,
+    categories_id_fk int,
     constraint ads_categories_join_ads_id_fk
-        foreign key (ads_id_fk) references ads (id),
+    foreign key (ads_id_fk) references ads (id),
     constraint ads_categories_join_categories_id_fk
-        foreign key (categories_id_fk) references categories (id)
+    foreign key (categories_id_fk) references categories (id)
 );
 
 create table users_address
 (
     id int auto_increment primary key,
-    street_address varchar(255) not null,
-    city varchar(50)  not null,
-    state varchar(2)   not null,
+    street_address varchar(255),
+    city varchar(50) not null,
+    state varchar(2) not null,
     zip_code int not null,
     users_id int not null ,
     constraint users_address_users_id_fk
