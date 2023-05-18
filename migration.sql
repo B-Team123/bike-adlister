@@ -1,22 +1,64 @@
 USE adlister_db;
 
+DROP TABLE IF EXISTS ads_categories_join;
+DROP TABLE IF EXISTS users_address;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
 
-CREATE TABLE users (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
+create table categories
+(
+    id int auto_increment primary key,
+    size varchar(50),
+    types varchar(255)
 );
 
-CREATE TABLE ads (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id INT UNSIGNED NOT NULL,
-    title VARCHAR(240) NOT NULL,
-    description TEXT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-        ON DELETE CASCADE
+create table users
+(
+    id             int auto_increment
+        primary key,
+    username varchar(255) not null,
+    password varchar(255) not null,
+    email varchar(255) not null,
+    `phone-number`int not null,
+    avatar_url varchar(255),
+    constraint email
+        unique (email),
+    constraint username
+        unique (username)
 );
+
+create table ads
+(
+    id int auto_increment primary key,
+    user_id int not null,
+    title varchar(255) not null,
+    description TEXT not null,
+    price       double       not null,
+    constraint ads_users_id_fk
+        foreign key (user_id) references users (id)
+);
+
+create table ads_categories_join
+(
+    ads_id_fk        int null,
+    categories_id_fk int null,
+    constraint ads_categories_join_ads_id_fk
+        foreign key (ads_id_fk) references ads (id),
+    constraint ads_categories_join_categories_id_fk
+        foreign key (categories_id_fk) references categories (id)
+);
+
+create table users_address
+(
+    id int auto_increment primary key,
+    street_address varchar(255) not null,
+    city varchar(50)  not null,
+    state varchar(2)   not null,
+    zip_code int not null,
+    users_id int not null ,
+    constraint users_address_users_id_fk
+    foreign key (users_id) references users (id)
+);
+
+

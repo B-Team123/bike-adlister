@@ -26,8 +26,13 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block">
+            <div class="form-group">
+                <label for="phone_number">Enter your phone number</label>
+                <input id="phone_number" name="phone_number" class="form-control" type="text">
+            </div>
         </form>
+            <input type="submit" class="btn btn-primary btn-block">
+        <span>Already registered? <a href="/login">Log in now!</a></span>
     </div>
 </body>
 </html>
