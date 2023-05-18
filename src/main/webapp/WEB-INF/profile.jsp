@@ -9,6 +9,8 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
+        <c:if test="${sessionScope.user == null}">
+            <jsp:forward page="/login" />
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 
