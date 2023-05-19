@@ -25,6 +25,8 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+
+        // check if username already exists
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         // TODO: ensure the submitted information is valid

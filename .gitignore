@@ -2,13 +2,10 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+Config.java
 
 ### IntelliJ IDEA ###
 .idea/*
-*.iws
-*.iml
-*.ipr
-Config.java
 
 ### Eclipse ###
 .apt_generated
@@ -34,3 +31,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+keys.js

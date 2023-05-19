@@ -1,28 +1,37 @@
 package com.codeup.adlister.models;
 
-public class Address {
-    private int id;
+public class UserAddress {
+    private long id;
     private String streetAddress;
     private String city;
     private String state;
     private String zipCode;
 
 
-    public Address() {}
-    public Address(int id, String streetAddress, String city, String state, String zipCode) {
-        this.id = id;
+    public UserAddress() {
+    }
+
+    public UserAddress(String streetAddress, String city, String state, String zipCode) {
         this.streetAddress = streetAddress;
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
     }
 
+    public UserAddress(long id, String streetAddress, String city, String state, String zipCode) {
+        this.id = id;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
 
-    public int getId() {
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
