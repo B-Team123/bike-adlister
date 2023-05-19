@@ -14,8 +14,8 @@
 	<div class="page-wrapper">
 		<section class="user-data">
 			<h2>Welcome, <c:out value="${sessionScope.user.username}" />!</h2>
-			<div class="user-avatar"
-					 style="background-image: url(../styles/kimson-doan-HD8KlyWRYYM-unsplash.jpg); background-size: cover; background-position: top center; border-radius: 50%;">
+			<div class="user-avatar">
+<%--					 style="background-image: url(../styles/kimson-doan-HD8KlyWRYYM-unsplash.jpg); background-size: cover; background-position: top center; border-radius: 50%;">--%>
 				<label class="profile-pic-upload" type="submit">
 					<div class="avatar-wrapper">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -24,6 +24,7 @@
 						</svg>
 					</div>
 					</label>
+				<div class="upload-remove-btn"><img src="../styles/pen-to-square-regular.svg" alt="edit icon"></div>
 			</div>
 			<div class="user-details">
 				<div class="details-wrap">
@@ -51,6 +52,7 @@
 		</main>
 	</div>
 </div>
-
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<script type="module" src="../js/script.js"></script>
 </body>
 </html>

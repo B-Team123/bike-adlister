@@ -31,10 +31,16 @@ section {
 
 .user-avatar {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 200px;
   width: 200px;
+}
+
+.avatar {
+  height: 100%;
+  width: 100%;
 }
 
 .profile-pic-upload {
@@ -57,6 +63,32 @@ section {
   border-radius: 50%;
 }
 
+.upload-remove-btn {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: large;
+  font-weight: bold;
+  background: white;
+  padding: 4px;
+  box-shadow: rgba(0, 0, 0, 0.8) -1px 6px 10px 0;
+  cursor: pointer;
+  transition: all ease .3s;
+}
+
+.upload-remove-btn:hover,
+.upload-remove-btn:focus {
+  background-color: grey;
+  color: white;
+}
+
 .avatar-wrapper {
   display: flex;
   justify-content: center;
@@ -68,6 +100,10 @@ section {
   transition: all ease .3s;
 }
 
+.hidden {
+  display: none;
+}
+
 svg {
   height: 100px;
   width: 100px;
@@ -77,6 +113,7 @@ svg {
 
 .avatar-wrapper:hover,
 .avatar-wrapper:focus {
+  background-color: white;
   box-shadow: inset rgba(0, 0, 0, 0.8) 0 0 15px;
 }
 
@@ -95,3 +132,4 @@ main {
   flex: 3 0 0;
   background: lightgray;
 }
+
