@@ -1,3 +1,8 @@
+:root {
+  --primary-color: rgb(52, 52, 52);
+  --secondary-color: rgba(168, 57, 22);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -56,7 +61,7 @@ section {
 
 .upload-btn {
   cursor: pointer;
-  background: grey;
+  background: var(--primary-color);
   padding: 10px;
   height: 100%;
   width: 100%;
@@ -77,54 +82,49 @@ section {
   font-size: large;
   font-weight: bold;
   background: white;
-  color: grey;
+  color: var(--secondary-color);
   padding: 4px;
   box-shadow: rgba(0, 0, 0, 0.8) -1px 6px 10px 0;
   cursor: pointer;
   transition: all ease .3s;
 }
 
-.upload-remove-btn:hover,
-.upload-remove-btn:focus {
-  background-color: grey;
-  color: white;
+.upload-remove-btn:hover{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .avatar-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: grey;
   height: 200px;
   width: 200px;
   border-radius: 50%;
   font-size: 4em;
-  color: white;
+  border: 1px solid black;
+  color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.8) -1px 6px 10px 0;
   transition: all ease .3s;
+}
+
+.avatar-wrapper i {
+  transition: transform ease .3s;
 }
 
 .hidden {
   display: none;
 }
 
-svg {
-  height: 100px;
-  width: 100px;
-  aspect-ratio: auto;
-  transition: all ease .3s;
+.avatar-wrapper:hover {
+  /*background-color: var(--secondary-color);*/
+  /*color: var(--primary-color);*/
+  box-shadow: inset rgba(0, 0, 0, 0.8) 0 0 6px;
+  /*font-size: 3.90em;*/
 }
 
-.avatar-wrapper:hover,
-.avatar-wrapper:focus {
-  background-color: white;
-  color: grey;
-  box-shadow: inset rgba(0, 0, 0, 0.8) 0 0 15px;
-  font-size: 3.8em;
-}
-
-.avatar-wrapper:hover > svg,
-.avatar-wrapper:focus > svg {
-  scale: 1.1;
+.avatar-wrapper:hover i {
+  transform: scale(.9);
 }
 
 .details-wrap {
@@ -135,6 +135,6 @@ main {
   display: flex;
   flex-direction: column;
   flex: 3 0 0;
-  background: lightgray;
+  background: var(--primary-color);
 }
 
