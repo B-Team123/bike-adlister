@@ -89,7 +89,7 @@ section {
   transition: all ease .3s;
 }
 
-.upload-remove-btn:hover{
+.upload-remove-btn:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
@@ -117,14 +117,7 @@ section {
 }
 
 .avatar-wrapper:hover {
-  /*background-color: var(--secondary-color);*/
-  /*color: var(--primary-color);*/
   box-shadow: inset rgba(0, 0, 0, 0.8) 0 0 6px;
-  /*font-size: 3.90em;*/
-}
-
-.avatar-wrapper:hover i {
-  transform: scale(.9);
 }
 
 .details-wrap {
