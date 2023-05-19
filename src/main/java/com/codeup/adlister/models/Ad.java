@@ -6,6 +6,8 @@ public class Ad {
     private String title;
     private String description;
     private double price;
+    private String type;
+    private String size;
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
@@ -19,13 +21,37 @@ public class Ad {
         this.title = title;
         this.description = description;
     }
-
     public Ad(long id, long userId, String title, String description, double price) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
         this.price = price;
+    }
+    public Ad(long id, long userId, String title, String description, double price, String type, String size) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.type = type;
+        this.size = size;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public long getId() {
