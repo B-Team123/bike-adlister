@@ -8,6 +8,6 @@ public class Config {
         return "root";
     }
     public static String getPassword(){
-        return "codeup";
+        return "brooks1231";
     }
 }

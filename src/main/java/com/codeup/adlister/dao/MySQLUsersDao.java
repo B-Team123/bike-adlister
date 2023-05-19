@@ -40,7 +40,7 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving user by username: " + username, e);
         }
-        return  null; // Return null if no user found with the given username
+        return null; // Return null if no user found with the given username
     }
 
     @Override
@@ -63,7 +63,7 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        User user = new User(
+        return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("email"),
@@ -71,15 +71,6 @@ public class MySQLUsersDao implements Users {
                 rs.getString("phone_number"),
                 rs.getString("avatar_url")
         );
-        UserAddress address = new UserAddress(
-                rs.getString("street_address"),
-                rs.getString("city"),
-                rs.getString("state"),
-                rs.getString("zip_code")
-        );
-        user.setAddress(address);
-
-        return user;
     }
 
     private List<User> createUsersFromResults(ResultSet rs) throws SQLException {

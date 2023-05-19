@@ -24,22 +24,22 @@
 			</div>
 			<div class="user-details">
 				<div class="details-wrap">
-					<h3>Member Since</h3>
+					<h3>Member Since: </h3>
 				</div>
 				<div class="details-wrap">
-					<h3>Username</h3>
+					<h3>Username: ${username}</h3>
 				</div>
 				<div class="details-wrap">
-					<h3>Email</h3>
+					<h3>Email: ${email}</h3>
 				</div>
 				<div class="details-wrap">
-					<h3>Phone Number</h3>
+					<h3>Phone Number: ${phoneNumber}</h3>
 				</div>
 				<div class="details-wrap">
-					<h3>City / State</h3>
+					<h3>City, State: ${city}, ${state}</h3>
 				</div>
 				<div class="details-wrap">
-					<h3>No. of Ads</h3>
+					<h3>Totals Ads: </h3>
 				</div>
 			</div>
 		</section>

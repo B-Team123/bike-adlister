@@ -42,12 +42,17 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
+        String insertQuery = "INSERT INTO ads(user_id, title, description, price, size, type) VALUES (?, ?, ?, ?, ?, ?)";
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
+            stmt.setDouble(4, ad.getPrice());
+            stmt.setString(5, ad.getSize());
+            stmt.setString(6, ad.getType());
+
+            System.out.println(ad.getUserId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -59,15 +64,16 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> userAds(Long userId) {
-        PreparedStatement stmt = null;
-        try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
-            stmt.setLong(1, userId);
-            ResultSet rs = stmt.executeQuery();
-            return createAdsFromResults(rs);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving ad for user id: " + userId, e);
-        }
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
+//            stmt.setLong(1, userId);
+//            ResultSet rs = stmt.executeQuery();
+//            return createAdsFromResults(rs);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving ad for user id: " + userId, e);
+//        }
+        return null;
     }
 
     @Override
@@ -97,22 +103,15 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
-        List<Feature> features = new ArrayList<>();
-        while (rs.next()) {
-            features.add(new Feature(
-                    rs.getLong("id"),
-                    rs.getString("name")
-            ));
-        }
-
-        Ad ad = new Ad(
+        return new Ad(
                 rs.getLong("id"),
                 rs.getLong("user_id"),
                 rs.getString("title"),
-                rs.getString("description")
+                rs.getString("description"),
+                rs.getDouble("price"),
+                rs.getString("size"),
+                rs.getString("type")
         );
-        ad.setFeatures(features);
-        return ad;
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
