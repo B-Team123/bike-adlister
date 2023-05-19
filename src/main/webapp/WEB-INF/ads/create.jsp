@@ -44,37 +44,39 @@
         <div class="form-group">
             <%--@declare id="features"--%>
             <%--@declare id="bars"--%>
-            <label for="features">Features:</label><br>
-
-            <label for="bars">Bar Type</label><br>
-            <input type="checkbox" id="drop" name="bar-type" value="drop">
+                <label for="bars">Bar Type</label><br>
+                <input type="radio" id="drop" name="bar-type" value="drop">
                 <label for="drop">Drop Bar</label><br>
 
-                <input type="checkbox" id="flat" name="bar-type" value="flat">
+                <input type="radio" id="flat" name="bar-type" value="flat">
                 <label for="flat">Flat Bar</label><br>
 
-                <input type="checkbox" id="riser" name="bar-type" value="riser">
+                <input type="radio" id="riser" name="bar-type" value="riser">
                 <label for="riser">Riser Bar</label><br>
 
-                <input type="checkbox" id="bullhorn" name="bar-type" value="bullhorn">
+                <input type="radio" id="bullhorn" name="bar-type" value="bullhorn">
                 <label for="bullhorn">Bullhorn Bar</label><br>
 
-                <input type="checkbox" id="ape" name="bar-type" value="ape">
+                <input type="radio" id="ape" name="bar-type" value="ape">
                 <label for="ape">Ape Hanger Bar</label><br>
 
-            <label for="bars">Brake Type</label><br>
-                <input type="checkbox" id="disc" name="disc" value="disc">
+                <label for="brake-type" id="brake-type">Brake Type</label><br>
+
+                <input type="radio" id="disc" name="brake-type" value="disc">
                 <label for="disc">Disc</label><br>
 
-                <input type="checkbox" id="rim" name="rim" value="rim">
+                <input type="radio" id="rim" name="brake-type" value="rim">
                 <label for="rim">Rim</label><br>
 
-                <input type="checkbox" id="V" name="V" value="V">
-                <label for="V">V</label><br>
+                <input type="radio" id="v-brake" name="brake-type" value="v-brake">
+                <label for="v-brake">V-Brake</label><br>
 
-            <label for="yesNo">Bell</label><br>
-            <input type="checkbox" id="yesNo" name=yesNo value="yesNo">
-            <label for="yesNo">Yes/No</label><br>
+                <label for="bell">Bell</label><br>
+                <input type="radio" id="bell" name="bell" value="yes">
+                <label for="bell">Yes</label><br>
+
+                <input type="radio" id="no" name="bell" value="no">
+                <label for="no">No</label><br>
 
         </div>
         <div class="form-group">
