@@ -41,10 +41,11 @@
                 <option value="5">XL</option>
             </select>
         </div>
+                <%--        Bike feature options: Bar Type, Brake Types, Bell        --%>
+
         <div class="form-group">
-            <%--@declare id="features"--%>
-            <%--@declare id="bars"--%>
-                <label for="bars">Bar Type</label><br>
+            <label for="bars">Bike Features</label><br>
+                <label for="bars" id="bars">Bar Type</label><br>
                 <input type="radio" id="drop" name="bar-type" value="drop">
                 <label for="drop">Drop Bar</label><br>
 
