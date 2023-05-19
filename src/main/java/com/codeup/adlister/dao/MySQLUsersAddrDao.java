@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.User;
 import com.codeup.adlister.models.UserAddress;
 import com.mysql.cj.jdbc.Driver;
 import config.Config;
@@ -31,6 +32,16 @@ public class MySQLUsersAddrDao implements UsersAddress{
             return extractUserAddress(stmt.executeQuery());
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving user by city: " + city, e);
+        }
+    }
+    public UserAddress findAddressByUserId(User id){
+        String query = "SELECT * FROM adlister_db.users_address WHERE users_id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id.getId());
+            return extractUserAddress(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving user by id: " + id, e);
         }
     }
 

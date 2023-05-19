@@ -6,6 +6,25 @@ public class User {
     private String email;
     private String password;
     private String phoneNumber;
+    private UserAddress address;
+
+    public UserAddress getAddress() {
+        return address;
+    }
+
+    public void setAddress(UserAddress address) {
+        this.address = address;
+    }
+
+    public User(long id, String username, String email, String password, String phoneNumber, UserAddress address, String avatarURL) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.avatarURL = avatarURL;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;
