@@ -1,3 +1,14 @@
+import {keys} from './keys.js';
+const fileUploads = document.querySelectorAll('label.profile-pic-upload');
+const filestackClient = filestack.init(keys.filestack);
+
+fileUploads.forEach(label => {
+  const input = label.querySelector("input[type=file]");
+  const
+})
+
+
+
 // // file upload
 // const fileUploads = document.querySelectorAll("label.file-upload");
 // const filestackClient = filestack.init(keys.filestack);
