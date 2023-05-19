@@ -5,6 +5,7 @@ import config.Config;
 public class DaoFactory {
     private static Ads adsDao;
     private static Users usersDao;
+    private static UsersAddress usersAddressDao;
     private static Config config = new Config();
 
     public static Ads getAdsDao() {
@@ -19,5 +20,11 @@ public class DaoFactory {
             usersDao = new MySQLUsersDao(config);
         }
         return usersDao;
+    }
+    public static UsersAddress getUsersAddressDao() {
+        if (usersAddressDao == null) {
+            usersAddressDao = new MySQLUsersAddrDao(config);
+        }
+        return usersAddressDao;
     }
 }
