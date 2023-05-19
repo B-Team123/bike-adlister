@@ -4,7 +4,6 @@
 	<jsp:include page="partials/head.jsp">
 		<jsp:param name="title" value="Create Your Account!" />
 	</jsp:include>
-	<link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
