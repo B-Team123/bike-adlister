@@ -38,7 +38,7 @@ public class MySQLUsersAddrDao implements UsersAddress{
         String query = "SELECT * FROM adlister_db.users_address WHERE users_id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, id.getId());
+            stmt.setLong(1, id);
             return extractUserAddress(stmt.executeQuery());
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving user by id: " + id, e);
