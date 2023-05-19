@@ -15,10 +15,9 @@
 		<section class="user-data">
 			<h2>Welcome, <c:out value="${sessionScope.user.username}" />!</h2>
 			<div class="user-avatar">
-<%--					 style="background-image: url(../styles/kimson-doan-HD8KlyWRYYM-unsplash.jpg); background-size: cover; background-position: top center; border-radius: 50%;">--%>
 				<label class="profile-pic-upload" type="submit">
 					<div class="avatar-wrapper">
-						<i class="fa-regular fa-user fa-2xl"></i>
+						<i class="fa-thin fa-user fa-2xl"></i>
 					</div>
 					</label>
 				<div class="upload-remove-btn"><i class="fa-regular fa-pen-to-square"></i></div>
