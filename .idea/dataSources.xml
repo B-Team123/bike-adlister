@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="ad_lister@localhost" uuid="cb3f12c7-01a6-4e6f-b2f4-3ae66906eb4d">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/ad_lister</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <time-zone>UTC</time-zone>
+    </data-source>
+  </component>
+</project>
