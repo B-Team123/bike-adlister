@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  column-gap: 40px;
+}
+
+h1 {
+  align-self: center;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+}
+
+section {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+}
+
+.profile-pic-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+}
+
+.upload-btn {
+  cursor: pointer;
+  background: grey;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.icon-wrapper {
+  background: grey;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}
+
+.details-wrap {
+  align-self: stretch;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 3 0 0;
+  background: lightgray;
+}
