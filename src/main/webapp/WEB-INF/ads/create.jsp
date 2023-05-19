@@ -34,12 +34,12 @@
             <label for="size">size</label>
             <select id="size" name="size" class="form-control">
                 <%--        bike sizes informative options tags       --%>
-                <option value="0" name="blank"></option>
-                <option value="1" name="Child">Child</option>
-                <option value="2">Small</option>
-                <option value="3">Medium</option>
-                <option value="4">Large</option>
-                <option value="5">XL</option>
+                <option value="0"></option>
+                <option value="Child">Child</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="XL">XL</option>
             </select>
         </div>
         <div class="form-group">
