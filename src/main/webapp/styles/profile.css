@@ -77,6 +77,7 @@ section {
   font-size: large;
   font-weight: bold;
   background: white;
+  color: grey;
   padding: 4px;
   box-shadow: rgba(0, 0, 0, 0.8) -1px 6px 10px 0;
   cursor: pointer;
@@ -97,6 +98,8 @@ section {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+  font-size: 4em;
+  color: white;
   transition: all ease .3s;
 }
 
@@ -114,7 +117,9 @@ svg {
 .avatar-wrapper:hover,
 .avatar-wrapper:focus {
   background-color: white;
+  color: grey;
   box-shadow: inset rgba(0, 0, 0, 0.8) 0 0 15px;
+  font-size: 3em;
 }
 
 .avatar-wrapper:hover > svg,

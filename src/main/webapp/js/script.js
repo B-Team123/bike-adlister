@@ -10,7 +10,7 @@ fileUploads.forEach(label => {
 
   const filestackOptions = {
     maxFiles:        multiple ? 10 : 1,
-    imageMax:        [400, 400],
+    imageMax:        [600, 600],
     transformations: {
       crop:   false,
       circle: true,
