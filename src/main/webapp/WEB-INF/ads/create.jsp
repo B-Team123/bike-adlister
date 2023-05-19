@@ -26,8 +26,7 @@
                 <option value="2">Road</option>
                 <option value="3">Hybrid</option>
                 <option value="4">Electric</option>
-                <option value="5">Child</option>
-                <option value="6">Folding</option>
+                <option value="5">Folding</option>
             </select>
         </div>
         <div class="form-group">
@@ -41,6 +40,42 @@
                 <option value="4">Large</option>
                 <option value="5">XL</option>
             </select>
+        </div>
+        <div class="form-group">
+            <%--@declare id="features"--%>
+            <%--@declare id="bars"--%>
+            <label for="features">Features:</label><br>
+
+            <label for="bars">Bar Type</label><br>
+            <input type="checkbox" id="drop" name="bar-type" value="drop">
+                <label for="drop">Drop Bar</label><br>
+
+                <input type="checkbox" id="flat" name="bar-type" value="flat">
+                <label for="flat">Flat Bar</label><br>
+
+                <input type="checkbox" id="riser" name="bar-type" value="riser">
+                <label for="riser">Riser Bar</label><br>
+
+                <input type="checkbox" id="bullhorn" name="bar-type" value="bullhorn">
+                <label for="bullhorn">Bullhorn Bar</label><br>
+
+                <input type="checkbox" id="ape" name="bar-type" value="ape">
+                <label for="ape">Ape Hanger Bar</label><br>
+
+            <label for="bars">Brake Type</label><br>
+                <input type="checkbox" id="disc" name="disc" value="disc">
+                <label for="disc">Disc</label><br>
+
+                <input type="checkbox" id="rim" name="rim" value="rim">
+                <label for="rim">Rim</label><br>
+
+                <input type="checkbox" id="V" name="V" value="V">
+                <label for="V">V</label><br>
+
+            <label for="yesNo">Bell</label><br>
+            <input type="checkbox" id="yesNo" name=yesNo value="yesNo">
+            <label for="yesNo">Yes/No</label><br>
+
         </div>
         <div class="form-group">
             <label for="description">Price</label>
