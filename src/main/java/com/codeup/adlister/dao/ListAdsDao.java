@@ -27,6 +27,39 @@ public class ListAdsDao implements Ads {
         return ad.getId();
     }
 
+    @Override
+    public List<Ad> userAds(Long userId) {
+        List<Ad> userAds = new ArrayList<>();
+        for (Ad ad : all()) {
+            if (ad.getUserId() == userId) {
+                userAds.add(ad);
+            }
+        }
+        return userAds;
+    }
+
+    @Override
+    public List<Ad> filterByType(String type) {
+        List<Ad> filteredAds = new ArrayList<>();
+        for (Ad ad : all()) {
+            if (ad.getType().equals(type)) {
+                filteredAds.add(ad);
+            }
+        }
+        return filteredAds;
+    }
+
+    @Override
+    public List<Ad> filterBySize(String size) {
+        List<Ad> filteredAds = new ArrayList<>();
+        for (Ad ad : all()) {
+            if (ad.getSize().equals(size)) {
+                filteredAds.add(ad);
+            }
+        }
+        return filteredAds;
+    }
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
