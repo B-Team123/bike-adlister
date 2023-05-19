@@ -34,7 +34,7 @@ public class MySQLUsersAddrDao implements UsersAddress{
             throw new RuntimeException("Error retrieving user by city: " + city, e);
         }
     }
-    public UserAddress findAddressByUserId(User id){
+    public UserAddress findAddressByUserId(Long id){
         String query = "SELECT * FROM adlister_db.users_address WHERE users_id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
@@ -68,7 +68,6 @@ public class MySQLUsersAddrDao implements UsersAddress{
             return null;
         }
         return new UserAddress(
-                rs.getLong("id"),
                 rs.getString("street_address"),
                 rs.getString("city"),
                 rs.getString("state"),

@@ -6,4 +6,6 @@ public interface UsersAddress {
     UserAddress findByCity(String city);
 
     Long insert(UserAddress usersAddress);
+
+    UserAddress findAddressByUserId(Long userId);
 }

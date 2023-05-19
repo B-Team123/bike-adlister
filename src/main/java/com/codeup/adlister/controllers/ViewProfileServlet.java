@@ -32,7 +32,7 @@ public class ViewProfileServlet extends HttpServlet {
         //get user info
         req.setAttribute("user", DaoFactory.getUsersDao().findByUsername(userName));
         //get user address
-        req.setAttribute("address", DaoFactory.getUsersAddressDao().findAddressByUserId(5L));
+//        req.setAttribute("address", DaoFactory.getUsersAddressDao().findAddressByUserId(5L));
 
     }
 }
