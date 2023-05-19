@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.models.UserAddress;
 import com.mysql.cj.jdbc.Driver;
 
 import config.Config;
@@ -62,15 +63,23 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        return new User(
+        User user = new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("email"),
                 rs.getString("password"),
                 rs.getString("phone_number"),
                 rs.getString("avatar_url")
-
         );
+        UserAddress address = new UserAddress(
+                rs.getString("street_address"),
+                rs.getString("city"),
+                rs.getString("state"),
+                rs.getString("zip_code")
+        );
+        user.setAddress(address);
+
+        return user;
     }
 
     private List<User> createUsersFromResults(ResultSet rs) throws SQLException {
