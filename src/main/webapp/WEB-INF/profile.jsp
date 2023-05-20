@@ -13,7 +13,7 @@
 <div class="container">
 	<div class="page-wrapper">
 		<section class="user-data">
-			<h2>Welcome, <c:out value="${sessionScope.user.username}" />!</h2>
+			<h2>Welcome, <c:out value="${sessionScope.user.username}" /> User!</h2>
 			<div class="user-avatar">
 				<label class="profile-pic-upload" type="submit">
 					<div class="avatar-wrapper">

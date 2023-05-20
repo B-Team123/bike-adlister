@@ -54,7 +54,7 @@ fileUploads.forEach(label => {
           form.dispatchEvent(event);
         });
       });
-      form.dispatchEvent(event);
+      // form.dispatchEvent(event);
     },
   };
   label.addEventListener('click', function (e) {
