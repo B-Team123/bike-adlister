@@ -5,6 +5,7 @@ import com.codeup.adlister.models.Feature;
 import com.mysql.cj.jdbc.Driver;
 import config.Config;
 
+import javax.xml.transform.Result;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -114,6 +115,20 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> searchAd(String search) {
+        String searchQuery = "SELECT * FROM adlister_db.ads WHERE title LIKE ? OR description LIKE ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setString(1, "%" + search + "%");
+            stmt.setString(2, "%" + search + "%");
+            ResultSet rs =  stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching for ad with search: " + search, e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
                 rs.getLong("id"),
@@ -133,6 +148,8 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 
 
 }

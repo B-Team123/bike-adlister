@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
@@ -23,10 +24,20 @@ public class AdsIndexServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long currentAdId =  Long.parseLong(request.getParameter("adToDelete"));
-        System.out.println("Ad ID to delete: " + currentAdId);
+        if (request.getParameter("adToDelete") != null) {
+            long currentAdId = Long.parseLong(request.getParameter("adToDelete"));
+            System.out.println("Ad ID to delete: " + currentAdId);
+            DaoFactory.getAdsDao().removeAd(currentAdId);
+            response.sendRedirect("/ads");
+        } else if (request.getParameter("search") != null) {
+                String searchText = request.getParameter("search");
+                System.out.println("Search text: " + searchText);
+                List<Ad> searchResults = DaoFactory.getAdsDao().searchAd(searchText);
+                request.setAttribute("searchResults", searchResults);
+                //send redirect to searchedAds.jsp
+                request.getRequestDispatcher("/WEB-INF/ads/searchedAds.jsp").forward(request, response);
 
-        DaoFactory.getAdsDao().removeAd(currentAdId);
-        response.sendRedirect("/ads");
+            }
+
     }
 }
