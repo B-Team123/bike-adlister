@@ -5,6 +5,7 @@ import com.codeup.adlister.models.Feature;
 import com.mysql.cj.jdbc.Driver;
 import config.Config;
 
+import javax.xml.transform.Result;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,7 +43,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
-        String insertQuery = "INSERT INTO ads(user_id, title, description, price, size, type) VALUES (?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO adlister_db.ads(user_id, title, description, price, size, type) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getId());
@@ -80,7 +81,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> filterByType(String type) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE type = ?");
+            stmt = connection.prepareStatement("SELECT * FROM adlister_db.ads WHERE type = ?");
             stmt.setString(1, type);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
@@ -99,6 +100,32 @@ public class MySQLAdsDao implements Ads {
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving ad for size: " + size, e);
+        }
+    }
+
+    @Override
+    public void removeAd(Long adId) {
+        String deleteQuery = "DELETE FROM adlister_db.ads WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, adId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting ad with id: " + adId, e);
+        }
+    }
+
+    @Override
+    public List<Ad> searchAd(String search) {
+        String searchQuery = "SELECT * FROM adlister_db.ads WHERE title LIKE ? OR description LIKE ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setString(1, "%" + search + "%");
+            stmt.setString(2, "%" + search + "%");
+            ResultSet rs =  stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching for ad with search: " + search, e);
         }
     }
 
@@ -121,4 +148,8 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
+
+
 }

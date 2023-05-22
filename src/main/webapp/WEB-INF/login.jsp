@@ -12,14 +12,14 @@
     <form action="/login" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" name="username" class="form-control" type="text" autofocus>
+            <input id="username" name="username" class="form-control" type="text" autofocus value="${param.username}">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input id="password" name="password" class="form-control" type="password">
+            <input id="password" name="password" class="form-control" type="password" value="${param.password}">
         </div>
         <input type="submit" class="btn btn-primary btn-block" value="Log In">
-        <span>Don't have an account? <a href="/register">Sign up now!</a></span>
+        <span>Don't have an account? <a href="/register" style="color: cornflowerblue">Sign up now!</a></span>
     </form>
 </div>
 </body>

@@ -38,7 +38,7 @@
 			</div>
 		</section>
 		<main class="user-ads-container">
-
+            <a href="/ads/create" class="btn btn-primary">Create new ad</a>
 		</main>
 	</div>
 </div>

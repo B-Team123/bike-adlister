@@ -6,9 +6,31 @@
             <a class="navbar-brand" href="/">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
+            <form action="/ads" method="POST" class="navbar-form">
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2 text-center">
+                        <input name="search" placeholder="Search Ads" type="search" class="form-control" />
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </ul>
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/ads/create">Create ad</a></li>
+            <li><a href="/profile">View profile</a></li>
             <li><a href="/register">Create An Account</a></li>
             <li><a href="/login">Login</a></li>
             <li><a href="/logout">Logout</a></li>
+            <li><a href="/ads">View All Ads</a></li>
+            <li><a href="/ads/create">Create An Ad</a></li>
+            <li><a href="/profile">Profile</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
