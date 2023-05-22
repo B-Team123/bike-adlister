@@ -7,14 +7,14 @@
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
-<div class="container">
+<form class="container">
 
     <h1>Please fill in your information.</h1>
     <form action="/register" method="post">
     <div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" name="username" class="form-control" type="text">
+            <input id="username" name="username" class="form-control" type="text" value="${param.username}">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
@@ -32,22 +32,21 @@
             <label for="phone_number">Enter your phone number</label>
             <input id="phone_number" name="phone_number" class="form-control" type="text">
         </div>
-<%--        <label for="type">Favorite Bike Type</label>--%>
-<%--        <select id="type" name="type" class="form-control">--%>
-<%--            &lt;%&ndash;        bike types informative options tags       &ndash;%&gt;--%>
-<%--            <option value="0" name="blank"></option>--%>
-<%--            <option value="1" name="Mountain">Mountain</option>--%>
-<%--            <option value="2" name="Road">Road</option>--%>
-<%--            <option value="3" name="Hybrid">Hybrid</option>--%>
-<%--            <option value="4" name="Electric">Electric</option>--%>
-<%--            <option value="5" name="Folding">Folding</option>--%>
-<%--        </select><br>--%>
+        <label for="type">Favorite Bike Type</label>
+      <select id="type" name="type" class="form-control">
+    <option value="0" name="blank" ${param.type == '0' ? 'selected' : ''}></option>
+    <option value="1" name="Mountain" ${param.type == '1' ? 'selected' : ''}>Mountain</option>
+    <option value="2" name="Road" ${param.type == '2' ? 'selected' : ''}>Road</option>
+    <option value="3" name="Hybrid" ${param.type == '3' ? 'selected' : ''}>Hybrid</option>
+    <option value="4" name="Electric" ${param.type == '4' ? 'selected' : ''}>Electric</option>
+    <option value="5" name="Folding" ${param.type == '5' ? 'selected' : ''}>Folding</option>
+    </select>
     <input type="submit" class="btn btn-primary btn-block">
+    </div>
     </form>
-
+</form>
+<div class="form-group">
 <span>Already registered? <a href="/login" style="color: cornflowerblue">Log in now!</a></span>
-
-</div>
 </div>
 </body>
 </html>
