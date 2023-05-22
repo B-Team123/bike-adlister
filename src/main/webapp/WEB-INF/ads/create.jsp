@@ -43,41 +43,38 @@
         </div>
                 <%--        Bike feature options: Bar Type, Brake Types, Bell        --%>
 
-        <div class="form-group">
-            <label for="bars">Bike Features</label><br>
-                <label for="bars" id="bars">Bar Type</label><br>
-                <input type="radio" id="drop" name="bar-type" value="drop">
-                <label for="drop">Drop Bar</label><br>
+<%--        <div class="form-group">--%>
+<%--            <label for="bars">Bike Features</label><br>--%>
+<%--                <label for="bars" id="bars">Bar Type</label><br>--%>
+<%--                <input type="radio" id="drop" name="bars" value="drop">--%>
+<%--                <label for="drop">Drop Bar</label><br>--%>
 
-                <input type="radio" id="flat" name="bar-type" value="flat">
-                <label for="flat">Flat Bar</label><br>
+<%--                <input type="radio" id="flat" name="bars" value="flat">--%>
+<%--                <label for="flat">Flat Bar</label><br>--%>
 
-                <input type="radio" id="riser" name="bar-type" value="riser">
-                <label for="riser">Riser Bar</label><br>
+<%--                <input type="radio" id="riser" name="bars" value="riser">--%>
+<%--                <label for="riser">Riser Bar</label><br>--%>
 
-                <input type="radio" id="bullhorn" name="bar-type" value="bullhorn">
-                <label for="bullhorn">Bullhorn Bar</label><br>
+<%--                <input type="radio" id="bullhorn" name="bars" value="bullhorn">--%>
+<%--                <label for="bullhorn">Bullhorn Bar</label><br>--%>
 
-                <input type="radio" id="ape" name="bar-type" value="ape">
-                <label for="ape">Ape Hanger Bar</label><br>
+<%--                <input type="radio" id="ape" name="bars" value="ape">--%>
+<%--                <label for="ape">Ape Hanger Bar</label><br>--%>
 
-                <label for="brake-type" id="brake-type">Brake Type</label><br>
+<%--                <label for="brake-type" id="brake-type">Brake Type</label><br>--%>
 
-                <input type="radio" id="disc" name="brake-type" value="disc">
-                <label for="disc">Disc</label><br>
+<%--                <input type="radio" id="disc" name="brakes-type" value="disc">--%>
+<%--                <label for="disc">Disc</label><br>--%>
 
-                <input type="radio" id="rim" name="brake-type" value="rim">
-                <label for="rim">Rim</label><br>
+<%--                <input type="radio" id="rim" name="brakes-type" value="rim">--%>
+<%--                <label for="rim">Rim</label><br>--%>
 
-                <input type="radio" id="v-brake" name="brake-type" value="v-brake">
-                <label for="v-brake">V-Brake</label><br>
+<%--                <input type="radio" id="v-brake" name="brakes-typ" value="v-brake">--%>
+<%--                <label for="v-brake">V-Brake</label><br>--%>
 
-                <label for="bell">Bell</label><br>
-                <input type="radio" id="bell" name="bell" value="yes">
-                <label for="bell">Yes</label><br>
-
-                <input type="radio" id="no" name="bell" value="no">
-                <label for="no">No</label><br>
+<%--                <label for="bell">Bell</label><br>--%>
+<%--                <input type="radio" id="bell" name="bell" value="bell">--%>
+<%--                <label for="bell">Bell</label><br>--%>
 
         </div>
         <div class="form-group">
