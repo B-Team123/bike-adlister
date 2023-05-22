@@ -15,4 +15,6 @@ public interface Ads {
     List<Ad> filterByType(String type);
     // filter by bike size
     List<Ad> filterBySize(String size);
+    // delete an ad
+    void removeAd(Long adId);
 }

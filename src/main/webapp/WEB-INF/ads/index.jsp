@@ -11,14 +11,18 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <c:if test="${userId == ad.getUserId()}">
+                <a href="/ads/${ad.id}/edit">Edit</a>
+                <form action="/ads" method="post">
+                    <button name="adToDelete" type="submit" value="${ad.id}">DELETE</button>
+                </form>
+            </c:if>
         </div>
     </c:forEach>
 </div>
-
 </body>
 </html>
