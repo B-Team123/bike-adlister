@@ -80,7 +80,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> filterByType(String type) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE type = ?");
+            stmt = connection.prepareStatement("SELECT * FROM adlister_db.ads WHERE type = ?");
             stmt.setString(1, type);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
@@ -99,6 +99,18 @@ public class MySQLAdsDao implements Ads {
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving ad for size: " + size, e);
+        }
+    }
+
+    @Override
+    public void removeAd(Long adId) {
+        String deleteQuery = "DELETE FROM adlister_db.ads WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, adId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting ad with id: " + adId, e);
         }
     }
 
@@ -121,4 +133,6 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 }

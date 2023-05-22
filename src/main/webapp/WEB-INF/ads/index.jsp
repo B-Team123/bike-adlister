@@ -11,8 +11,18 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
     <c:forEach var="ad" items="${ads}">
+
+        <div class="col-md-6">
+            <h2>${ad.title}</h2>
+            <p>${ad.description}</p>
+            <c:if test="${userId == ad.getUserId()}">
+                <a href="/ads/${ad.id}/edit">Edit</a>
+                <form action="/ads" method="post">
+                    <button name="adToDelete" type="submit" value="${ad.id}">DELETE</button>
+                </form>
+            </c:if>
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://via.placeholder.com/500" alt="Card image cap">
             <div class="card-body">
@@ -24,9 +34,9 @@
 
                 <a href="#" class="btn btn-primary">View ad</a>
             </div>
+
         </div>
     </c:forEach>
 </div>
-
 </body>
 </html>
