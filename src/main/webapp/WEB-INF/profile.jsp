@@ -37,7 +37,12 @@
 				</div>
 			</div>
 		</section>
+<<<<<<< HEAD
 		<main class="user-ads-container">
+=======
+		<main>
+            <a href="/ads/create" class="btn btn-primary">Create new ad</a>
+>>>>>>> main
 
 		</main>
 	</div>
