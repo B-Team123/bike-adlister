@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS features;
 create table features
 (
     id int auto_increment primary key,
-    name int null
+    name varchar(255) null
 );
 
 create table users
