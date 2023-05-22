@@ -12,11 +12,7 @@
     <form action="/login" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
-<<<<<<< HEAD
-            <input id="username" name="username" class="form-control" type="text" autofocus>
-=======
-            <input id="username" name="username" class="form-control" type="text" value="${param.username}">
->>>>>>> main
+            <input id="username" name="username" class="form-control" type="text" autofocus value="${param.username}">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
