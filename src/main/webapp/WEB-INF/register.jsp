@@ -44,34 +44,8 @@
     <input type="submit" class="btn btn-primary btn-block">
 
 <span>Already registered? <a href="/login">Log in now!</a></span>
+
 </div>
-
-	<h1>Please fill in your information.</h1>
-	<form action="/register" method="post">
-		<div class="form-group">
-			<label for="username">Username</label>
-			<input id="username" name="username" class="form-control" type="text">
-		</div>
-		<div class="form-group">
-			<label for="email">Email</label>
-			<input id="email" name="email" class="form-control" type="text">
-		</div>
-		<div class="form-group">
-			<label for="password">Password</label>
-			<input id="password" name="password" class="form-control" type="password">
-		</div>
-		<div class="form-group">
-			<label for="confirm_password">Confirm Password</label>
-			<input id="confirm_password" name="confirm_password" class="form-control" type="password">
-		</div>
-		<div class="form-group">
-			<label for="phone_number">Enter your phone number</label>
-			<input id="phone_number" name="phone_number" class="form-control" type="text">
-		</div>
-		<input type="submit" class="btn btn-primary btn-block">
-	</form>
-	<span>Already registered? <a href="/login">Log in now!</a></span>
-
 </div>
 </body>
 </html>
