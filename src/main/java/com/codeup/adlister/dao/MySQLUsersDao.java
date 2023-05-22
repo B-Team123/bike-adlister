@@ -62,6 +62,22 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    public Long update(User user) {
+        String query = "update adlister_db.users set avatar_url = ? where ? ";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getAvatarURL());
+            stmt.setString(2, user.getUsername());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error adding url", e);
+        }
+    }
+
+
     private User extractUser(ResultSet rs) throws SQLException {
         return new User(
                 rs.getLong("id"),

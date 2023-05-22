@@ -42,5 +42,11 @@ public class ViewProfileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String avatar_url = request.getParameter("avatar_url");
+        User user = (User) request.getSession().getAttribute("user");
+        user.setAvatarURL(avatar_url);
+
+
+
     }
 }

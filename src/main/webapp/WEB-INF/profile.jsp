@@ -13,22 +13,18 @@
 <div class="container">
 	<div class="page-wrapper">
 		<section class="user-data">
-			<h2>Welcome, <c:out value="${sessionScope.user.username}" /> User!</h2>
+			<h2>Welcome, <c:out value="${sessionScope.user.username}" /></h2>
 			<div class="user-avatar">
-				<label class="profile-pic-upload" type="submit">
-					<div class="avatar-wrapper">
-						<i class="fa-thin fa-user fa-2xl"></i>
-					</div>
+				<form action="/profile" method="post">
+					<label class="profile-pic-upload" type="submit">
+						<div class="avatar-wrapper">
+							<i class="fa-thin fa-user fa-2xl"></i>
+						</div>
 					</label>
-				<div class="upload-remove-btn"><i class="fa-regular fa-pen-to-square"></i></div>
+					<div class="upload-remove-btn"><i class="fa-regular fa-pen-to-square"></i></div>
+				</form>
 			</div>
 			<div class="user-details">
-				<div class="details-wrap">
-					<h3>Member Since: </h3>
-				</div>
-				<div class="details-wrap">
-					<h3>Username: ${username}</h3>
-				</div>
 				<div class="details-wrap">
 					<h3>Email: ${email}</h3>
 				</div>
@@ -43,7 +39,7 @@
 				</div>
 			</div>
 		</section>
-		<main>
+		<main class="user-ads-container">
 
 		</main>
 	</div>

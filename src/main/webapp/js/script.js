@@ -46,6 +46,7 @@ fileUploads.forEach(label => {
         const removeButton = document.querySelector('.upload-remove-btn');
         label.classList.toggle('hidden');
         removeButton.addEventListener('click', function () {
+          filestackClient.picker(filestackOptions).open();
           const hiddenInput = label.querySelector(`input[id="${file.uploadId}"]`);
           hiddenInput.remove();
           userAvatarDiv.removeChild(userAvatar);
