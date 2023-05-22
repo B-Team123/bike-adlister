@@ -1,10 +1,12 @@
 USE adlister_db;
 
+
 DROP TABLE IF EXISTS ads_feat_join;
 DROP TABLE IF EXISTS users_address;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS features;
+
 
 create table features
 (
