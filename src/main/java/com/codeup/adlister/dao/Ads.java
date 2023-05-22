@@ -17,4 +17,6 @@ public interface Ads {
     List<Ad> filterBySize(String size);
     // delete an ad
     void removeAd(Long adId);
+
+    List<Ad> searchAd(String search);
 }
