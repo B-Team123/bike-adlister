@@ -12,6 +12,10 @@ public class Feature {
         this.name = name;
     }
 
+    public Feature(String name) {
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
