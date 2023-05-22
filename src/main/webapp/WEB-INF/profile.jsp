@@ -11,15 +11,17 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
+	<jsp:include page="partials/profile-edit-form.jsp">
+		<jsp:param name="visible" value="hidden" />
+	</jsp:include>
 	<div class="page-wrapper">
 		<section class="user-data">
 			<h2>Welcome, <c:out value="${sessionScope.user.username}" /></h2>
 			<div class="user-avatar">
-				<form action="/profile" method="post" id="avatar-form">
 					<input id="hidden-input" type="hidden" name="photo" />
 				<img class="avatar" src="${avatar_url}" alt="">
-				</form>
 			</div>
+			<button class="edit-btn btn btn-primary btn-block">Edit</button>
 			<div class="user-details">
 				<div class="details-wrap">
 					<h3>Email: ${email}</h3>
@@ -41,6 +43,6 @@
 	</div>
 </div>
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-<script type="module" src="../js/avatar-script.js"></script>
+<script type="module" src="../js/profile-script.js"></script>
 </body>
 </html>

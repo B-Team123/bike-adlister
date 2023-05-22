@@ -36,7 +36,7 @@ public class ViewProfileServlet extends HttpServlet {
     String avatar_url = user.getAvatarURL();
 
     if (avatar_url.isBlank()) {
-      avatar_url = "https://dummyimage.com/600x400/fff/fff";
+      avatar_url = "https://dummyimage.com/600x400/979797/000&text=Click+to+upload+/+edit+your+profile+photo";
     }
 
 
