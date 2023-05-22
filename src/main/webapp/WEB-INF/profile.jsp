@@ -15,13 +15,9 @@
 		<section class="user-data">
 			<h2>Welcome, <c:out value="${sessionScope.user.username}" /></h2>
 			<div class="user-avatar">
-				<form action="/profile" method="post">
-					<label class="profile-pic-upload" type="submit">
-						<div class="avatar-wrapper">
-							<i class="fa-thin fa-user fa-2xl"></i>
-						</div>
-					</label>
-					<div class="upload-remove-btn"><i class="fa-regular fa-pen-to-square"></i></div>
+				<form action="/profile" method="post" id="avatar-form">
+					<input id="hidden-input" type="hidden" name="photo" />
+				<img class="avatar" src="${avatar_url}" alt="">
 				</form>
 			</div>
 			<div class="user-details">
@@ -45,6 +41,6 @@
 	</div>
 </div>
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-<script type="module" src="../js/script.js"></script>
+<script type="module" src="../js/avatar-script.js"></script>
 </body>
 </html>
