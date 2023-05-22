@@ -11,24 +11,18 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
+	<jsp:include page="partials/profile-edit-form.jsp">
+		<jsp:param name="visible" value="hidden" />
+	</jsp:include>
 	<div class="page-wrapper">
 		<section class="user-data">
-			<h2>Welcome, <c:out value="${sessionScope.user.username}" />!</h2>
+			<h2>Welcome, <c:out value="${sessionScope.user.username}" /></h2>
 			<div class="user-avatar">
-				<label class="profile-pic-upload" type="submit">
-					<div class="avatar-wrapper">
-						<i class="fa-thin fa-user fa-2xl"></i>
-					</div>
-					</label>
-				<div class="upload-remove-btn"><i class="fa-regular fa-pen-to-square"></i></div>
+					<input id="hidden-input" type="hidden" name="photo" />
+				<img class="avatar" src="${avatar_url}" alt="">
 			</div>
+			<button class="edit-btn btn btn-primary btn-block">Edit</button>
 			<div class="user-details">
-				<div class="details-wrap">
-					<h3>Member Since: </h3>
-				</div>
-				<div class="details-wrap">
-					<h3>Username: ${username}</h3>
-				</div>
 				<div class="details-wrap">
 					<h3>Email: ${email}</h3>
 				</div>
@@ -43,13 +37,12 @@
 				</div>
 			</div>
 		</section>
-		<main>
+		<main class="user-ads-container">
             <a href="/ads/create" class="btn btn-primary">Create new ad</a>
-
 		</main>
 	</div>
 </div>
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-<script type="module" src="../js/script.js"></script>
+<script type="module" src="../js/profile-script.js"></script>
 </body>
 </html>

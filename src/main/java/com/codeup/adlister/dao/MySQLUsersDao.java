@@ -1,7 +1,6 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
-import com.codeup.adlister.models.UserAddress;
 import com.mysql.cj.jdbc.Driver;
 
 import config.Config;
@@ -59,6 +58,20 @@ public class MySQLUsersDao implements Users {
             return rs.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public void update(User user) {
+        String query = "update adlister_db.users set avatar_url = ? where username = ? ";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getAvatarURL());
+            stmt.setString(2, user.getUsername());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error adding url", e);
         }
     }
 
