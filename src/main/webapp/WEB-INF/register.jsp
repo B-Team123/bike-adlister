@@ -10,7 +10,8 @@
 <div class="container">
 
     <h1>Please fill in your information.</h1>
-    <div action="/register" method="post">
+    <form action="/register" method="post">
+    <div>
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text">
@@ -31,19 +32,20 @@
             <label for="phone_number">Enter your phone number</label>
             <input id="phone_number" name="phone_number" class="form-control" type="text">
         </div>
-        <label for="type">Favorite Bike Type</label>
-        <select id="type" name="type" class="form-control">
-            <%--        bike types informative options tags       --%>
-            <option value="0" name="blank"></option>
-            <option value="1" name="Mountain">Mountain</option>
-            <option value="2" name="Road">Road</option>
-            <option value="3" name="Hybrid">Hybrid</option>
-            <option value="4" name="Electric">Electric</option>
-            <option value="5" name="Folding">Folding</option>
-        </select><br>
+<%--        <label for="type">Favorite Bike Type</label>--%>
+<%--        <select id="type" name="type" class="form-control">--%>
+<%--            &lt;%&ndash;        bike types informative options tags       &ndash;%&gt;--%>
+<%--            <option value="0" name="blank"></option>--%>
+<%--            <option value="1" name="Mountain">Mountain</option>--%>
+<%--            <option value="2" name="Road">Road</option>--%>
+<%--            <option value="3" name="Hybrid">Hybrid</option>--%>
+<%--            <option value="4" name="Electric">Electric</option>--%>
+<%--            <option value="5" name="Folding">Folding</option>--%>
+<%--        </select><br>--%>
     <input type="submit" class="btn btn-primary btn-block">
+    </form>
 
-<span>Already registered? <a href="/login">Log in now!</a></span>
+<span>Already registered? <a href="/login" style="color: cornflowerblue">Log in now!</a></span>
 
 </div>
 </div>

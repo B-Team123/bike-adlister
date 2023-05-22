@@ -25,6 +25,7 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+//        String bikeType = request.getParameter("type");
 
         // check if username already exists
         User user = DaoFactory.getUsersDao().findByUsername(username);
@@ -51,6 +52,7 @@ public class RegisterServlet extends HttpServlet {
         user = new User(username, email, BCrypt.hashpw(password, BCrypt.gensalt()));
         DaoFactory.getUsersDao().insert(user);
         request.getSession().setAttribute("user", user);
+
         response.sendRedirect("/profile");
     }
 }
