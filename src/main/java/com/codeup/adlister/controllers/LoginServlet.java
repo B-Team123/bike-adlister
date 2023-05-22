@@ -19,9 +19,7 @@ public class LoginServlet extends HttpServlet {
         String temp2 = request.getParameter("password");
         request.setAttribute("username", temp);
         request.setAttribute("password", temp2);
-//        if (temp == null || temp2 == null){
-//            request.setAttribute("usern","");
-//        }
+
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
             return;
@@ -38,14 +36,14 @@ public class LoginServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
 
-        //my answers
+        //logic for sticky form if user is null
         if (user == null ) {
             System.out.println("user is null");
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             return;
         }
-
-        if (password == null ) {
+        //logic for sticky form if password is null
+        if (password == null) {
             System.out.println("password is null");
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             return;
