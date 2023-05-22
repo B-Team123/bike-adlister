@@ -44,6 +44,7 @@
 			</div>
 		</section>
 		<main>
+            <a href="/ads/create" class="btn btn-primary">Create new ad</a>
 
 		</main>
 	</div>

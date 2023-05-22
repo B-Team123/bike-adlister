@@ -6,6 +6,8 @@
             <a class="navbar-brand" href="/">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
+            <li><a href="/ads/create">Create ad</a></li>
+            <li><a href="/profile">Create An Account</a></li>
             <li><a href="/register">Create An Account</a></li>
             <li><a href="/login">Login</a></li>
             <li><a href="/logout">Logout</a></li>
