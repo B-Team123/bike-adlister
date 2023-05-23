@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+import com.codeup.adlister.models.UserAddress;
 import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
@@ -38,7 +39,11 @@ public class RegisterServlet extends HttpServlet {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String passwordConfirmation = request.getParameter("confirm_password");
-            // String bikeType = request.getParameter("type");
+            String number = request.getParameter("phone_number");
+            String streetAddress = request.getParameter("address");
+            String city = request.getParameter("city");
+            String state = request.getParameter("state");
+            String zipCode = request.getParameter("zip_code");
 
             // Check if username already exists
             User user = DaoFactory.getUsersDao().findByUsername(username);
@@ -58,8 +63,14 @@ public class RegisterServlet extends HttpServlet {
             }
 
             // Create and save a new user
-            user = new User(username, email, BCrypt.hashpw(password, BCrypt.gensalt()));
+            user = new User(username, email, BCrypt.hashpw(password, BCrypt.gensalt()), number);
             DaoFactory.getUsersDao().insert(user);
+            Long user_id = DaoFactory.getUsersDao().findByUsername(username).getId();
+            System.out.println(user_id);
+            UserAddress userAddress = new UserAddress(streetAddress, city, state, zipCode, user_id);
+            DaoFactory.getUsersAddressDao().insert(userAddress);
+            request.getSession().setAttribute("address", userAddress);
+            user = new User(username, email, BCrypt.hashpw(password, BCrypt.gensalt()), number, userAddress);
             request.getSession().setAttribute("user", user);
 
             response.sendRedirect("/profile");
