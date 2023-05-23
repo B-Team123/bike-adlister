@@ -75,8 +75,6 @@
 <%--                <label for="bell">Bell</label><br>--%>
 <%--                <input type="radio" id="bell" name="bell" value="bell">--%>
 <%--                <label for="bell">Bell</label><br>--%>
-
-        </div>
         <div class="form-group">
             <label for="description">Price</label>
             <input id="price" name="price" class="form-control" type="text">

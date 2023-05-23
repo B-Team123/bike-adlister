@@ -15,11 +15,17 @@ import java.util.List;
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
-        User user = (User) request.getSession().getAttribute("user");
-        long userId = user.getId();
-        request.setAttribute("userId", userId);
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+        User currentSessionUser = (User) request.getSession().getAttribute("user");
+        if (currentSessionUser != null) {
+            request.setAttribute("ads", DaoFactory.getAdsDao().all());
+            User user = (User) request.getSession().getAttribute("user");
+            long userId = user.getId();
+            request.setAttribute("userId", userId);
+            request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        }
+
     }
 
     @Override

@@ -16,30 +16,15 @@ import java.util.List;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
-    }
-
-    public static void main(String[] args) {
-        String bars = "bullhorns";
-        String brakes = "disc";
-        String bell = "bell";
-
-        //construct csv style String
-        String features = "";
-        if (bars != null) {
-            features += bars + ",";
+        User currentSessionUser = (User) request.getSession().getAttribute("user");
+        if (currentSessionUser != null) {
+            request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+                    .forward(request, response);
+        } else {
+            request.getRequestDispatcher("/WEB-INF/ads/login.jsp").forward(request, response);
         }
-        if (brakes != null) {
-            features += brakes + ",";
-        }
-        if (bell != null) {
-            features += bell + ",";
-        }
-        //remove trailing comma
-        features = features.substring(0, features.length() - 1);
-        System.out.println(features);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -55,15 +40,7 @@ public class CreateAdServlet extends HttpServlet {
                     request.getParameter("type")
             );
 
-//// Initialize the features list
-//            List<Feature> barsInsert = new ArrayList<>();
-//            List<Feature> brakesInsert = new ArrayList<>();
-//            List<Feature> bellInsert = new ArrayList<>();
-//
-//            String bars = request.getParameter("bars");
-//            String brakes = request.getParameter("brake-type");
-//            String bell = request.getParameter("bell");
-
+            String bell = request.getParameter("bell");
 
 
             DaoFactory.getAdsDao().insert(ad);
