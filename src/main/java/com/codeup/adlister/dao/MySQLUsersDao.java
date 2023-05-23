@@ -45,14 +45,13 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO adlister_db.users(username, email, password, phone_number, avatar_url) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO adlister_db.users(username, email, password, phone_number) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
             stmt.setString(4, user.getPhoneNumber());
-            stmt.setString(5, user.getAvatarURL());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -62,9 +61,8 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    public void update(User user, UserAddress users_address) {
+    public void update(User user) {
         String query = "update adlister_db.users set username = ?, email = ?, avatar_url = ? where username = ? ";
-        String addressQuery = "update adlister_db.users_address set city = ?, state = ?, zip_code = ? where users_id = ? ";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
@@ -76,15 +74,6 @@ public class MySQLUsersDao implements Users {
             rs.next();
         } catch (SQLException e) {
             throw new RuntimeException("Error adding url", e);
-        }
-        try {
-            PreparedStatement addStmt =  connection.prepareStatement(addressQuery, Statement.RETURN_GENERATED_KEYS);
-            addStmt.setString(1, users_address.getCity());
-            addStmt.setString(2, users_address.getState());
-            addStmt.setInt (3, Integer.parseInt((users_address.getZipCode())));
-            addStmt.setInt(4, (int) user.getId());
-        } catch (SQLException e) {
-            throw new RuntimeException("Error adding users_address", e);
         }
     }
 

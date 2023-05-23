@@ -69,6 +69,10 @@ section {
   align-self: stretch;
 }
 
+.city-state {
+  text-transform: capitalize;
+}
+
 main {
   display: flex;
   flex-direction: column;

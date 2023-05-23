@@ -19,9 +19,6 @@
                 </div>
             </form>
         </ul>
-
-
-
         <ul class="nav navbar-nav navbar-right">
 
             <% if (request.getSession().getAttribute("user") == null) { %>
