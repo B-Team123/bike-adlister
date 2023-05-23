@@ -49,7 +49,7 @@ public class MySQLAdsDao implements Ads {
             stmt.setLong(1, ad.getId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
-            stmt.setDouble(4, ad.getPrice());
+            stmt.setInt(4, ad.getPrice());
             stmt.setString(5, ad.getSize());
             stmt.setString(6, ad.getType());
 

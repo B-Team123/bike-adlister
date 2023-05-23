@@ -31,6 +31,7 @@
             <li style="display: none;"><a href="/login">Login</a></li>
             <li><a href="/ads/create">Create An Ad</a></li>
             <li><a href="/ads">View All Ads</a></li>
+            <li><a href="/profile">Profile</a></li>
             <li><a href="/logout">Logout</a></li>
             <% } %>
 
