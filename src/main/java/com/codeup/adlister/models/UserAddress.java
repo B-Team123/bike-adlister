@@ -6,7 +6,23 @@ public class UserAddress {
     private String city;
     private String state;
     private String zipCode;
+    private long user_id;
 
+    public UserAddress(String streetAddress, String city, String state, String zipCode, long user_id) {
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.user_id = user_id;
+    }
+
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
 
     public UserAddress() {
     }

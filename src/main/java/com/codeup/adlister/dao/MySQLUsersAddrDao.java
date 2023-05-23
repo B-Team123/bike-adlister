@@ -34,11 +34,11 @@ public class MySQLUsersAddrDao implements UsersAddress{
             throw new RuntimeException("Error retrieving user by city: " + city, e);
         }
     }
-    public UserAddress findAddressByUserId(User id){
+    public UserAddress findAddressByUserId(Long id){
         String query = "SELECT * FROM adlister_db.users_address WHERE users_id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, id.getId());
+            stmt.setLong(1, id);
             return extractUserAddress(stmt.executeQuery());
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving user by id: " + id, e);
@@ -47,19 +47,20 @@ public class MySQLUsersAddrDao implements UsersAddress{
 
     @Override
     public Long insert(UserAddress address) {
-        String query = "Insert into adlister_db.users_address (street_address, city, state, zip_code) values (?, ?, ?, ?)";
+        String query = "Insert into adlister_db.users_address (street_address, city, state, zip_code, users_id) values (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, address.getStreetAddress());
             stmt.setString(2, address.getCity());
             stmt.setString(3, address.getState());
             stmt.setString(4, address.getZipCode());
+            stmt.setLong(5, address.getUser_id());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating new user", e);
+            throw new RuntimeException("Error creating new user address", e);
         }
     }
 
