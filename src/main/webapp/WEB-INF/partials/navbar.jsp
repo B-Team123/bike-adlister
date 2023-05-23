@@ -19,9 +19,6 @@
                 </div>
             </form>
         </ul>
-
-
-
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/profile">View profile</a></li>
             <li><a href="/register">Create An Account</a></li>
