@@ -7,7 +7,7 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
-    private double price;
+    private int price;
     private String type;
     private String size;
     private List<Feature> features;
@@ -16,7 +16,7 @@ public class Ad {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.price = Double.parseDouble(price);
+        this.price = (int) Double.parseDouble(price);
         this.type = type;
         this.size = size;
     }
@@ -29,12 +29,12 @@ public class Ad {
         this.features = features;
     }
 
-    public Ad(long id, long userId, String title, String description, double price, String type, String size, List<Feature> features) {
+    public Ad(long id, long userId, String title, String description, int price, String type, String size, List<Feature> features) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
-        this.price = price;
+        this.price = (int) price;
         this.type = type;
         this.size = size;
         this.features = features;
@@ -52,14 +52,14 @@ public class Ad {
         this.title = title;
         this.description = description;
     }
-    public Ad(long id, long userId, String title, String description, double price) {
+    public Ad(long id, long userId, String title, String description, int price) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
         this.price = price;
     }
-    public Ad(long id, long userId, String title, String description, double price, String type, String size) {
+    public Ad(long id, long userId, String title, String description, int price, String type, String size) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -117,11 +117,11 @@ public class Ad {
         this.description = description;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

@@ -28,7 +28,7 @@
             <div class="card-body">
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">Description: ${ad.description}</p>
-                <p class="card-text">Price: ${ad.price}$</p>
+                <p class="card-text">Price: $${ad.price}</p>
                 <p class="card-text">Bike Type: ${ad.type}</p>
                 <p class="card-text">Bike Size: ${ad.size}</p>
 
