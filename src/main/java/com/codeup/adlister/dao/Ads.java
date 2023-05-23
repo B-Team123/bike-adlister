@@ -26,5 +26,8 @@ public interface Ads {
     // update an ad
     void update(Ad ad);
 
+    //get ad by userId
+    List<Ad> getAdsByUserId(Long userId);
+
 
 }
