@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.dao.UsersAddress;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.models.UserAddress;
 
@@ -39,8 +40,6 @@ public class ViewProfileServlet extends HttpServlet {
       avatar_url = "https://dummyimage.com/600x400/979797/000&text=Click+to+upload+/+edit+your+profile+photo";
     }
 
-
-
     request.setAttribute("username", username);
     request.setAttribute("email", email);
     request.setAttribute("phoneNumber", phoneNumber);
@@ -51,15 +50,22 @@ public class ViewProfileServlet extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String avatar_url = request.getParameter("photo");
-    System.out.println(avatar_url);
+    String city = request.getParameter("edit_city");
+    String state = request.getParameter("edit_state");
+    String zip = request.getParameter("edit_zip");
     User user = (User) request.getSession().getAttribute("user");
-    System.out.println(user);
-    user.setAvatarURL(avatar_url);
-    DaoFactory.getUsersDao().update(user);
+    UserAddress users_address = (UserAddress) request.getSession().getAttribute("user-address");
+    user.setAvatarURL(request.getParameter("photo"));
+    user.setUsername(request.getParameter("edit_username"));
+    user.setEmail(request.getParameter("edit_email"));
+    user.setPhoneNumber(request.getParameter("edit_phone_number"));
+    users_address.setCity(request.getParameter("edit_city"));
+    users_address.setState(request.getParameter("edit_state"));
+    users_address.setZipCode(request.getParameter("edit_zip"));
     request.getSession().setAttribute("user", user);
-    System.out.println(user);
-    System.out.println(user.getAvatarURL());
+    request.getSession().setAttribute("users_address", users_address);
+    DaoFactory.getUsersDao().update(user, users_address);
+    DaoFactory.getUsersAddressDao().update(users_address, user);
     response.sendRedirect("/profile");
   }
 }

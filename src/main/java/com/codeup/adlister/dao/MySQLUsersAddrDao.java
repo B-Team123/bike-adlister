@@ -75,4 +75,20 @@ public class MySQLUsersAddrDao implements UsersAddress{
                 rs.getString("zip_code")
         );
     }
+
+    public void update(UserAddress users_address, User user) {
+        String addressQuery = "update adlister_db.users_address set city = ?, state = ?, zip_code = ? where users_id = ? ";
+        try {
+            PreparedStatement addStmt = connection.prepareStatement(addressQuery, Statement.RETURN_GENERATED_KEYS);
+            addStmt.setString(1, users_address.getCity());
+            addStmt.setString(2, users_address.getState());
+            addStmt.setInt(3, Integer.parseInt((users_address.getZipCode())));
+            addStmt.setInt(4, (int) user.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error adding address", e);
+        }
+    }
 }
+
+
+
