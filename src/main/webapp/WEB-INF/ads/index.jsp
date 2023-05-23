@@ -35,15 +35,10 @@
         </c:forEach>
     </div>
 </div>
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-            <c:if test="${userId == ad.getUserId()}">
-                <a href="ads/edit?adId=${ad.id}">Edit</a>
-                <form action="/ads" method="post">
-                    <button name="adToDelete" type="submit" value="${ad.id}">DELETE</button>
-                </form>
-            </c:if>
+
+
+
+
 
 </body>
 </html>
