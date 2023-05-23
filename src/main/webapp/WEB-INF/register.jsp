@@ -31,15 +31,75 @@
             <label for="phone_number">Enter your phone number</label>
             <input id="phone_number" name="phone_number" class="form-control" type="text" value="${param.number}">
         </div>
-        <label for="type">Favorite Bike Type</label>
-      <select id="type" name="type" class="form-control" value="${param.type}">
-    <option value="0" name="blank" ${param.type == '0' ? 'selected' : ''}></option>
-    <option value="1" name="Mountain" ${param.type == '1' ? 'selected' : ''}>Mountain</option>
-    <option value="2" name="Road" ${param.type == '2' ? 'selected' : ''}>Road</option>
-    <option value="3" name="Hybrid" ${param.type == '3' ? 'selected' : ''}>Hybrid</option>
-    <option value="4" name="Electric" ${param.type == '4' ? 'selected' : ''}>Electric</option>
-    <option value="5" name="Folding" ${param.type == '5' ? 'selected' : ''}>Folding</option>
-    </select>
+        <div class="form-group">
+            <label for="address">Enter your street address</label>
+            <input id="address" name="address" class="form-control" type="text" value="${param.address}">
+        </div>
+        <div class="form-group">
+            <label for="city">Enter your city</label>
+            <input id="city" name="city" class="form-control" type="text" value="${param.city}">
+        </div>
+<%--        create select for all states--%>
+        <div class="form-group">
+            <label for="state">Enter your state</label>
+            <select id="state" name="state" class="form-control" type="text" value="${param.state}">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="zip_code">Enter your zip code</label>
+            <input id="zip_code" name="zip_code" class="form-control" type="text" value="${param.zip}">
+        </div>
+
     <input type="submit" class="btn btn-primary btn-block">
     <span>Already registered? <a href="/login" style="color: cornflowerblue">Log in now!</a></span>
     </form>

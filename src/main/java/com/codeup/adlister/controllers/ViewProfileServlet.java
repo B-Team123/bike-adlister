@@ -15,6 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     if (request.getSession().getAttribute("user") == null) {
       response.sendRedirect("/login");
       return;
@@ -36,7 +37,7 @@ public class ViewProfileServlet extends HttpServlet {
     String phoneNumber = user.getPhoneNumber();
     String avatar_url = user.getAvatarURL();
 
-    if (avatar_url.isBlank()) {
+    if (avatar_url == null) {
       avatar_url = "https://dummyimage.com/600x400/979797/000&text=Click+to+upload+/+edit+your+profile+photo";
     }
 
