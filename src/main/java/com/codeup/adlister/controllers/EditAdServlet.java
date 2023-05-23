@@ -41,7 +41,7 @@ public class EditAdServlet extends HttpServlet {
                     currentSessionUser.getId(),
                     req.getParameter("title"),
                     req.getParameter("description"),
-                    Double.parseDouble(price),
+                    Integer.parseInt(req.getParameter("price")),
                     req.getParameter("type"),
                     req.getParameter("size")
             );

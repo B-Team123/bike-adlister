@@ -12,7 +12,7 @@ public class Ad {
     private String size;
     private List<Feature> features;
 
-    public Ad(long userId, String title, String description, double price, String type, String size) {
+    public Ad(long userId, String title, String description, int price, String type, String size) {
         this.userId = userId;
         this.title = title;
         this.description = description;

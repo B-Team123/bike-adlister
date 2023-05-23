@@ -20,7 +20,7 @@ create table users
     username varchar(255) not null,
     password varchar(255) not null,
     email varchar(255) not null,
-    phone_number int null,
+    phone_number varchar(10) null,
     avatar_url varchar(255) null,
     constraint email unique (email),
     constraint username unique (username)
