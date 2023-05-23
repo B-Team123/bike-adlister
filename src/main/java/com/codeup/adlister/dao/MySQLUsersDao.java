@@ -45,13 +45,14 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO adlister_db.users(username, email, password, phone_number) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO adlister_db.users(username, email, password, phone_number, avatar_url) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
             stmt.setString(4, user.getPhoneNumber());
+            stmt.setString(5, user.getAvatarURL());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
