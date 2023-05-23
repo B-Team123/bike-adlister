@@ -10,8 +10,12 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
-        <h1>Welcome to the Adlister!</h1>
-        <div class="ads-container"></div>
+        <h1>Welcome to BikeHub!</h1>
+        <div class="ads-container">
+
+
+
+        </div>
     </div>
 </body>
 </html>
