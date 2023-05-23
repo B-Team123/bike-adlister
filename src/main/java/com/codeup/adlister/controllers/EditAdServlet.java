@@ -45,7 +45,6 @@ public class EditAdServlet extends HttpServlet {
                     req.getParameter("type"),
                     req.getParameter("size")
             );
-//            ad.setId(Long.parseLong(req.getParameter("adId")));
             DaoFactory.getAdsDao().update(ad);
         }
         resp.sendRedirect("/ads");

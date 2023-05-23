@@ -40,8 +40,6 @@ public class CreateAdServlet extends HttpServlet {
                     request.getParameter("type")
             );
 
-            String bell = request.getParameter("bell");
-
 
             DaoFactory.getAdsDao().insert(ad);
         }

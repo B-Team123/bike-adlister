@@ -9,5 +9,5 @@ public interface UsersAddress {
 
     UserAddress findAddressByUserId(Long id);
 
-    void update(UserAddress usersAddress, User user);
+    void update(UserAddress usersAddress);
 }

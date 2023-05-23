@@ -7,5 +7,7 @@ public interface Users {
     User findByUsername(String username);
     Long insert(User user);
     void update(User user, UserAddress users_address);
+
+
 }
 

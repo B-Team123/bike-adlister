@@ -38,6 +38,7 @@ public class AdsIndexServlet extends HttpServlet {
         } else if (request.getParameter("search") != null) {
                 String searchText = request.getParameter("search");
                 System.out.println("Search text: " + searchText);
+                //search for ads, sends the ads into the request
                 List<Ad> searchResults = DaoFactory.getAdsDao().searchAd(searchText);
                 request.setAttribute("searchResults", searchResults);
                 //send redirect to searchedAds.jsp

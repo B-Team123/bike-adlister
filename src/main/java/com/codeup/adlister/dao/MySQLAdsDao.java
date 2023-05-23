@@ -65,15 +65,6 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> userAds(Long userId) {
-//        PreparedStatement stmt = null;
-//        try {
-//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
-//            stmt.setLong(1, userId);
-//            ResultSet rs = stmt.executeQuery();
-//            return createAdsFromResults(rs);
-//        } catch (SQLException e) {
-//            throw new RuntimeException("Error retrieving ad for user id: " + userId, e);
-//        }
         return null;
     }
 
@@ -147,19 +138,6 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> getAdsByUserId(Long userId) {
-String query = "SELECT * FROM adlister_db.ads WHERE user_id = ?";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, userId);
-            ResultSet rs = stmt.executeQuery();
-            return createAdsFromResults(rs);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving ads with user id: " + userId, e);
-        }
-    }
-
-    @Override
     public List<Ad> searchAd(String search) {
         String searchQuery = "SELECT * FROM adlister_db.ads WHERE title LIKE ? OR description LIKE ?";
         try {
@@ -192,10 +170,4 @@ String query = "SELECT * FROM adlister_db.ads WHERE user_id = ?";
         }
         return ads;
     }
-
-
-
-
-
-
 }

@@ -46,9 +46,21 @@ public class MySQLUsersAddrDao implements UsersAddress{
     }
 
     @Override
-    public void update(UserAddress usersAddress, User user) {
-
+    public void update(UserAddress usersAddress) {
+        String query = "UPDATE adlister_db.users_address SET street_address = ?, city = ?, state = ?, zip_code = ? WHERE users_id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, usersAddress.getStreetAddress());
+            stmt.setString(2, usersAddress.getCity());
+            stmt.setString(3, usersAddress.getState());
+            stmt.setString(4, usersAddress.getZipCode());
+            stmt.setLong(5, usersAddress.getUser_id());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating user address", e);
+        }
     }
+
 
     @Override
     public Long insert(UserAddress address) {

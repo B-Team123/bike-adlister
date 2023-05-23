@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.models.UserAddress;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,9 +29,6 @@ public class ViewProfileServlet extends HttpServlet {
     UserAddress users_address = (UserAddress) request.getSession().getAttribute("address");
 
     if (users_address != null) {
-      long userId = user.getId();
-      List<Ad> usersAds = DaoFactory.getAdsDao().getAdsByUserId(userId);
-      request.setAttribute("ads",usersAds);
 
       String street = users_address.getStreetAddress();
       String city = users_address.getCity();
@@ -54,6 +52,7 @@ public class ViewProfileServlet extends HttpServlet {
     String zip = user.getAddress().getZipCode();
 
 
+
     if (avatar_url == null || avatar_url.isBlank()) {
       avatar_url = "https://dummyimage.com/600x400/979797/000&text=Click+to+upload+/+edit+your+profile+photo";
     }
@@ -65,9 +64,6 @@ public class ViewProfileServlet extends HttpServlet {
     request.setAttribute("state", state);
     request.setAttribute("zip", zip);
     request.setAttribute("avatar_url", avatar_url);
-
-
-    request.getSession().setAttribute("user", user);
 
 
     request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
@@ -85,8 +81,10 @@ public class ViewProfileServlet extends HttpServlet {
     address.setCity(request.getParameter("edit_city"));
     address.setState(request.getParameter("edit_state"));
     address.setZipCode(request.getParameter("edit_zip"));
+    address.setUser_id(user.getId());
 
-    DaoFactory.getUsersDao().update(user);
+    DaoFactory.getUsersDao().update(user,address);
+    DaoFactory.getUsersAddressDao().update(address);
 
     DaoFactory.getUsersAddressDao().findAddressByUserId(user.getId());
     request.getSession().setAttribute("user", user);

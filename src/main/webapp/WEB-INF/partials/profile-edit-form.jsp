@@ -24,7 +24,7 @@
 		</div>
 		<div class="form-group">
 			<label for="edit_zip">Zip Code</label>
-			<input id="edit_zip" name="edit_zip" class="form-control" type="text" value="${zip_code}">
+			<input id="edit_zip" name="edit_zip" class="form-control" type="text" value="${zip}">
 		</div>
 		<button type="submit" class="submit-edits-btn btn btn-primary btn-block">Submit Your Changes</button>
 	</form>
