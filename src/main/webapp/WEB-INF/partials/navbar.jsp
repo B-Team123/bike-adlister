@@ -20,18 +20,21 @@
             </form>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/profile">View profile</a></li>
-            <li><a href="/register">Create An Account</a></li>
+
             <% if (request.getSession().getAttribute("user") == null) { %>
             <li><a href="/login">Login</a></li>
             <li style="display: none;"><a href="/logout">Logout</a></li>
+            <li style="display: none;"> <a href="/ads/create">Create An Ad</a></li>
+            <li style="display: none;"><a href="/ads">View All Ads</a></li>
             <% } else { %>
+<%--            <li><a href="/profile">View profile</a></li>--%>
             <li style="display: none;"><a href="/login">Login</a></li>
+            <li><a href="/ads/create">Create An Ad</a></li>
+            <li><a href="/ads">View All Ads</a></li>
             <li><a href="/logout">Logout</a></li>
             <% } %>
-            <li><a href="/ads">View All Ads</a></li>
-            <li><a href="/ads/create">Create An Ad</a></li>
-            <li><a href="/profile">Profile</a></li>
+
+<%--            <li><a href="/profile">Profile</a></li>--%>
 <%--            <li><a href="/ads/create">Create ad</a></li>--%>
 <%--            <li><a href="/profile">View profile</a></li>--%>
 <%--            <li><a href="/register">Create An Account</a></li>--%>
@@ -43,7 +46,6 @@
 <%--            <li><a href="/login">Login</a></li>--%>
 <%--            <li><a href="/logout">Logout</a></li>--%>
 <%--            <li><a href="/ads">View All Ads</a></li>--%>
-<%--            <li><a href="/ads/create">Create An Ad</a></li>--%>
 <%--            <li><a href="/profile">Profile</a></li>--%>
         </ul>
     </div><!-- /.navbar-collapse -->

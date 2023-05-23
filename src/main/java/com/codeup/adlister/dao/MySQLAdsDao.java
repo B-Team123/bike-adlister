@@ -116,6 +116,37 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public Ad getAdById(Long adId) {
+        String query = "SELECT * FROM adlister_db.ads WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, adId);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ad with id: " + adId, e);
+        }
+    }
+
+    @Override
+    public void update(Ad ad) {
+        String updateQuery = "UPDATE adlister_db.ads SET title = ?, description = ?, price = ?, size = ?, type = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(updateQuery);
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.setDouble(3, ad.getPrice());
+            stmt.setString(4, ad.getSize());
+            stmt.setString(5, ad.getType());
+            stmt.setLong(6, ad.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating ad with id: " + ad.getId(), e);
+        }
+    }
+
+    @Override
     public List<Ad> searchAd(String search) {
         String searchQuery = "SELECT * FROM adlister_db.ads WHERE title LIKE ? OR description LIKE ?";
         try {
@@ -135,7 +166,7 @@ public class MySQLAdsDao implements Ads {
                 rs.getLong("user_id"),
                 rs.getString("title"),
                 rs.getString("description"),
-                rs.getDouble("price"),
+                rs.getInt("price"),
                 rs.getString("size"),
                 rs.getString("type")
         );
@@ -148,6 +179,8 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 
 
 
