@@ -18,8 +18,10 @@
 		<section class="user-data">
 			<h2>Welcome, <c:out value="${sessionScope.user.username}" /></h2>
 			<div class="user-avatar">
+				<form id="avatar-form" action="/profile" method="post">
 					<input id="hidden-input" type="hidden" name="photo" />
-				<img class="avatar" src="${avatar_url}" alt="">
+					<img class="avatar" src="${avatar_url}" alt="">
+				</form>
 			</div>
 			<button class="edit-btn btn btn-primary btn-block">Edit</button>
 			<div class="user-details">
@@ -38,7 +40,7 @@
 			</div>
 		</section>
 		<main class="user-ads-container">
-            <a href="/ads/create" class="btn btn-primary">Create new ad</a>
+			<a href="/ads/create" class="btn btn-primary">Create new ad</a>
 		</main>
 	</div>
 </div>
