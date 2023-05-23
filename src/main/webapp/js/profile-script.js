@@ -38,10 +38,9 @@ const removeAttributes = (element, ...attributes) => {
 
 editProfileBtn.addEventListener('click', function () {
   profileEditFormWrapper.classList.toggle('hidden');
-  console.log('fired')
 });
 
 profileEditOverlay.addEventListener('click', function(e) {
     editProfileBtn.click();
-    editFormData.reset();
+    profileEditForm.reset();
 })
