@@ -19,4 +19,12 @@ public interface Ads {
     void removeAd(Long adId);
 
     List<Ad> searchAd(String search);
+
+    // get ad by id
+    Ad getAdById(Long adId);
+
+    // update an ad
+    void update(Ad ad);
+
+
 }
