@@ -135,7 +135,7 @@ public class MySQLAdsDao implements Ads {
                 rs.getLong("user_id"),
                 rs.getString("title"),
                 rs.getString("description"),
-                rs.getDouble("price"),
+                rs.getInt("price"),
                 rs.getString("size"),
                 rs.getString("type")
         );
