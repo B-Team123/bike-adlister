@@ -52,22 +52,6 @@ public class MySQLFeaturesDao implements Features{
         }
     }
 
-    @Override
-    public List<Feature> findByAdId(long adId) {
-        String query = "SELECT * FROM adlister_db.features feat " +
-                "JOIN adlister_db.ads_feat_join afjoin ON feat.id = afjoin.feat_id_fk " +
-                "JOIN adlister_db.ads ads ON afjoin.ad_id_fk = ads.id " +
-                "WHERE ads.id = ?";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, adId);
-            ResultSet rs = stmt.executeQuery();
-            return createFeaturesFromResults(rs);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error finding features for ad id: " + adId, e);
-        }
-    }
-
     private Feature extractFeature(ResultSet rs) throws SQLException {
         return new Feature(
                 rs.getLong("id"),

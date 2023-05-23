@@ -10,5 +10,5 @@ public interface Features {
     // insert a new feature and return the new feature's id
     Long insert(Feature feature);
 
-    List<Feature> findByAdId(long adId);
+
 }

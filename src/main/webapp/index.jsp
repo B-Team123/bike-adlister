@@ -12,9 +12,6 @@
     <div class="container">
         <h1>Welcome to BikeHub!</h1>
         <div class="ads-container">
-
-
-
         </div>
     </div>
 </body>
