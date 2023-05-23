@@ -12,7 +12,7 @@
 		</div>
 		<div class="form-group">
 			<label for="edit_phone_number">Phone Number</label>
-			<input id="edit_phone_number" name="edit_phone_number" class="form-control" type="text" value="${phone_number}">
+			<input id="edit_phone_number" name="edit_phone_number" class="form-control" type="text" value="${phoneNumber}">
 		</div>
 		<div class="form-group">
 			<label for="edit_city">City</label>

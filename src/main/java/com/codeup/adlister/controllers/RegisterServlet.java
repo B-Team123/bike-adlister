@@ -1,17 +1,12 @@
 package com.codeup.adlister.controllers;
-
 import com.codeup.adlister.dao.DaoFactory;
-
 import com.codeup.adlister.models.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-
 import com.codeup.adlister.models.UserAddress;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -72,7 +67,6 @@ public class RegisterServlet extends HttpServlet {
             request.getSession().setAttribute("address", userAddress);
             user = new User(username, email, BCrypt.hashpw(password, BCrypt.gensalt()), number, userAddress);
             request.getSession().setAttribute("user", user);
-
             response.sendRedirect("/profile");
         }
     }

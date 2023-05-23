@@ -31,7 +31,7 @@
 				<div class="details-wrap">
 					<h3>Phone Number: ${phoneNumber}</h3>
 				</div>
-				<div class="details-wrap">
+				<div class="details-wrap city-state">
 					<h3>City, State: ${city}, ${state}</h3>
 				</div>
 				<div class="details-wrap">
