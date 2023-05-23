@@ -46,6 +46,11 @@ public class MySQLUsersAddrDao implements UsersAddress{
     }
 
     @Override
+    public void update(UserAddress usersAddress, User user) {
+
+    }
+
+    @Override
     public Long insert(UserAddress address) {
         String query = "Insert into adlister_db.users_address (street_address, city, state, zip_code, users_id) values (?, ?, ?, ?, ?)";
         try {

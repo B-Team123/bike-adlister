@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <h2><a class="navbar-brand" href="/">Adlister</a></h2>
+            <h2><a class="navbar-brand" href="/">BikeHub</a></h2>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <form action="/ads" method="POST" class="navbar-form">
@@ -31,6 +31,7 @@
             <li style="display: none;"><a href="/login">Login</a></li>
             <li><a href="/ads/create">Create An Ad</a></li>
             <li><a href="/ads">View All Ads</a></li>
+            <li><a href="/profile">Profile</a></li>
             <li><a href="/logout">Logout</a></li>
             <% } %>
 

@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.User;
 import com.codeup.adlister.models.UserAddress;
 
 public interface UsersAddress {
@@ -7,4 +8,6 @@ public interface UsersAddress {
     Long insert(UserAddress usersAddress);
 
     UserAddress findAddressByUserId(Long id);
+
+    void update(UserAddress usersAddress, User user);
 }

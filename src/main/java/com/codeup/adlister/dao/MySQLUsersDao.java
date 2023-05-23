@@ -62,7 +62,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    public void update(User user) {
+    public void update(User user, UserAddress userAddress) {
         String query = "update adlister_db.users set username = ?, email = ?, avatar_url = ? where username = ? ";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);

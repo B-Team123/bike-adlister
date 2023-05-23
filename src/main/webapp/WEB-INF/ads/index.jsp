@@ -24,7 +24,7 @@
                         <p class="card-text">Bike Size: ${ad.size}</p>
                         <a href="#" class="btn btn-primary">View ad</a>
                         <c:if test="${userId == ad.getUserId()}">
-                            <a href="/ads/${ad.id}/edit" class="btn btn-secondary">Edit</a>
+                            <a href="/ads/edit?adId=${ad.id}" class="btn btn-secondary">Edit</a>
                             <form action="/ads" method="post" style="display: inline;">
                                 <button name="adToDelete" type="submit" value="${ad.id}" class="btn btn-danger">DELETE</button>
                             </form>
@@ -35,15 +35,10 @@
         </c:forEach>
     </div>
 </div>
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-            <c:if test="${userId == ad.getUserId()}">
-                <a href="ads/edit?adId=${ad.id}">Edit</a>
-                <form action="/ads" method="post">
-                    <button name="adToDelete" type="submit" value="${ad.id}">DELETE</button>
-                </form>
-            </c:if>
+
+
+
+
 
 </body>
 </html>
