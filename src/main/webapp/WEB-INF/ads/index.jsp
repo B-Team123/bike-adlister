@@ -23,8 +23,8 @@
                 </form>
             </c:if>
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://via.placeholder.com/500" alt="Card image cap">
+        <div class="card" style="width: 30rem;">
+            <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">Description: ${ad.description}</p>
