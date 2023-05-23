@@ -1,0 +1,39 @@
+.ad-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-photo-wrapper span {
+  font-weight: 700;
+}
+
+.ad-thumbnail-display {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  column-gap: 5px;
+  margin: 5px 0 30px 0;
+}
+
+.upload-thumbnail {
+  position:relative;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.upload-thumbnail img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.upload-remove {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}

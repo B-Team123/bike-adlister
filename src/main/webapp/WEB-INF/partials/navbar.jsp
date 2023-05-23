@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Adlister</a>
+            <h2><a class="navbar-brand" href="/">Adlister</a></h2>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <form action="/ads" method="POST" class="navbar-form">
@@ -23,18 +23,21 @@
 
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/profile">View profile</a></li>
-            <li><a href="/register">Create An Account</a></li>
+
             <% if (request.getSession().getAttribute("user") == null) { %>
             <li><a href="/login">Login</a></li>
             <li style="display: none;"><a href="/logout">Logout</a></li>
+            <li style="display: none;"> <a href="/ads/create">Create An Ad</a></li>
+            <li style="display: none;"><a href="/ads">View All Ads</a></li>
             <% } else { %>
+<%--            <li><a href="/profile">View profile</a></li>--%>
             <li style="display: none;"><a href="/login">Login</a></li>
+            <li><a href="/ads/create">Create An Ad</a></li>
+            <li><a href="/ads">View All Ads</a></li>
             <li><a href="/logout">Logout</a></li>
             <% } %>
-            <li><a href="/ads">View All Ads</a></li>
-            <li><a href="/ads/create">Create An Ad</a></li>
-            <li><a href="/profile">Profile</a></li>
+
+<%--            <li><a href="/profile">Profile</a></li>--%>
 <%--            <li><a href="/ads/create">Create ad</a></li>--%>
 <%--            <li><a href="/profile">View profile</a></li>--%>
 <%--            <li><a href="/register">Create An Account</a></li>--%>
@@ -46,7 +49,6 @@
 <%--            <li><a href="/login">Login</a></li>--%>
 <%--            <li><a href="/logout">Logout</a></li>--%>
 <%--            <li><a href="/ads">View All Ads</a></li>--%>
-<%--            <li><a href="/ads/create">Create An Ad</a></li>--%>
 <%--            <li><a href="/profile">Profile</a></li>--%>
         </ul>
     </div><!-- /.navbar-collapse -->
