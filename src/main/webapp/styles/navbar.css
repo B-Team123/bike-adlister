@@ -3,3 +3,13 @@
   margin: unset;
   padding: 0 20px;
 }
+
+.navbar-header {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar-header h2 {
+  margin: 0;
+}

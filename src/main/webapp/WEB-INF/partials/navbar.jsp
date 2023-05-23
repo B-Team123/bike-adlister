@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Adlister</a>
+            <h2><a class="navbar-brand" href="/">Adlister</a></h2>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <form action="/ads" method="POST" class="navbar-form">
