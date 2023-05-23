@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../../styles/profile.css">
 <div class="profile-edit-wrapper ${param.visible}">
 	<div class="profile-edit-overlay"></div>
-	<form class="profile-edit-form" action="/profile" method="POST">
+	<form class="profile-edit-form" action="../profile" method="POST">
 		<div class="form-group">
 			<label for="edit_username">Username</label>
 			<input id="edit_username" name="edit_username" class="form-control" type="text" value="${username}">
