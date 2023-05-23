@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.dao.UsersAddress;
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.models.UserAddress;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
@@ -26,6 +29,10 @@ public class ViewProfileServlet extends HttpServlet {
     UserAddress users_address = (UserAddress) request.getSession().getAttribute("address");
 
     if (users_address != null) {
+      long userId = user.getId();
+      List<Ad> usersAds = DaoFactory.getAdsDao().getAdsByUserId(userId);
+      request.setAttribute("ads",usersAds);
+
       String street = users_address.getStreetAddress();
       String city = users_address.getCity();
       String state = users_address.getState();
@@ -60,6 +67,10 @@ public class ViewProfileServlet extends HttpServlet {
     request.setAttribute("zip", zip);
     request.setAttribute("avatar_url", avatar_url);
 
+    user.getId();
+
+
+
     request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
   }
 
@@ -77,7 +88,7 @@ public class ViewProfileServlet extends HttpServlet {
     user.setAddress(address);
     request.getSession().setAttribute("user", user);
     request.getSession().setAttribute("address", address);
-    DaoFactory.getUsersDao().update(user);
+    DaoFactory.getUsersDao().update(user, address);
     DaoFactory.getUsersAddressDao().findAddressByUserId(user.getId());
     response.sendRedirect("/profile");
   }

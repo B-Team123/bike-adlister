@@ -34,9 +34,6 @@
 				<div class="details-wrap city-state">
 					<h3>City, State: ${city}, ${state}</h3>
 				</div>
-				<div class="details-wrap">
-					<h3>Totals Ads: </h3>
-				</div>
 			</div>
 		</section>
 		<main class="user-ads-container">
