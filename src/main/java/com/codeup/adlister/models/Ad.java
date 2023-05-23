@@ -12,6 +12,15 @@ public class Ad {
     private String size;
     private List<Feature> features;
 
+    public Ad(long userId, String title, String description, double price, String type, String size) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.type = type;
+        this.size = size;
+    }
+
     public Ad(long id, String title, String description, String price, String type, String size) {
         this.id = id;
         this.title = title;

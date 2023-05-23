@@ -17,7 +17,7 @@
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
             <c:if test="${userId == ad.getUserId()}">
-                <a href="/ads/${ad.id}/edit">Edit</a>
+                <a href="ads/edit?adId=${ad.id}">Edit</a>
                 <form action="/ads" method="post">
                     <button name="adToDelete" type="submit" value="${ad.id}">DELETE</button>
                 </form>
