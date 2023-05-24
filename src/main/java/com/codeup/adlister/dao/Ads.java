@@ -9,12 +9,20 @@ public interface Ads {
     List<Ad> all();
     // inserts a new ad and return the new ad's id
     Long insert(Ad ad);
+<<<<<<< HEAD
     // deletes an ad
+=======
+    // delete an ad
+>>>>>>> origin/main
     void removeAd(Long adId);
 
     List<Ad> searchAd(String search);
 
+<<<<<<< HEAD
     // gets ad by id
+=======
+    // get ad by id
+>>>>>>> origin/main
     Ad getAdById(Long adId);
 
     // update an ad
